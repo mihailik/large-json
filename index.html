@@ -1,0 +1,23 @@
+<button onclick="loadMoreData()">Load more data</button>
+<pre id=report>
+</pre>
+<script>
+
+var loadedArrays = [];
+
+function loadMoreData() {
+  var script = document.createElement('script');
+  script.src="jsonp.js";
+}
+
+function loadJson(jsonArr) {
+  loadedArrays.push(jsonArr);
+  var totalSize = loadedArrays.reduce(function(sz, arr) { return sz + arr.length; }, 0);
+  
+  var report = document.getElementById('report');
+  var chunk = document.createElement('p');
+  chunk.textContent = chunk.innerText = 'Added ' + jsonArr.length+', now holding total ' + totalSize + ' elements in the array in JS heap.';
+  report.appendChild(chunk);
+}
+
+</script>

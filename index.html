@@ -8,6 +8,7 @@ var loadedArrays = [];
 function loadMoreData() {
   var script = document.createElement('script');
   script.src="jsonp.js";
+  document.body.appendChild(script);
 }
 
 function loadJson(jsonArr) {

@@ -9,7 +9,7 @@ var totalRawSize = 0;
 
 function loadMoreData() {
   var script = document.createElement('script');
-  script.src="jsonp.js";
+  script.src="jsonp.js?" + Math.random() + Date(); // randomize to avoid caching
   document.body.appendChild(script);
 }
 
